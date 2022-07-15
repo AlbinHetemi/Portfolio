@@ -1,0 +1,35 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewData["Title"] - Albin Hetemi/Porfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/css/NavBar.css">
+    <link rel="stylesheet" href="~/css/Index.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/Images/It.png" />
+</head>
+<body>
+    <header>
+        <div class="Headeri1" id="Headeri1">
+            <a href=Index-1.html>AlbinHetemi/Portfolio </a>
+            <a href="#HomeContainer"> Home</a>
+            <a>Projects</a>
+            <a href="#About">About</a>
+            <a href="../Views/Shared/About.cshtml"> Contact Me</a>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+    </header>
+
+
+
+    @RenderBody() 
+    <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="/js/Skill.js"></script>
+    <script type="text/javascript" src="~/js/NavBar.js"></script>
+    @await RenderSectionAsync("Scripts", required: false);
+</body>
+</html>
