@@ -17,19 +17,20 @@
             <a href="#HomeContainer"> Home</a>
             <a href="#Projektet">Projects</a>
             <a href="#About">About</a>
-            <a href="../Views/Shared/About.cshtml"> Contact Me</a>
+            <a href="#Kontaktet"> Contact Me</a>
             <a href="javascript:void(0);" class="icon" onclick="myFunction()">
                 <i class="fa fa-bars"></i>
             </a>
         </div>
     </header>
-
-
+     
+    <button onclick="topFunction()" id="BtnUp" title="Go to top"> TOP</button>
 
     @RenderBody() 
     <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="/js/Skill.js"></script>
     <script type="text/javascript" src="~/js/NavBar.js"></script>
+    <script type="text/javascript" src="js/Buttoni.js"></script>
     @await RenderSectionAsync("Scripts", required: false);
 </body>
 </html>
