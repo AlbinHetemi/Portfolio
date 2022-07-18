@@ -1,4 +1,5 @@
-﻿@{
+﻿@model Profile
+@{
     ViewData["Title"] = "Home Page";
 }
 
@@ -10,9 +11,9 @@
             <img src="/Images/Personi.jpg" alt="Personi" class="ImazhetCon" height="300" width="300" />
         </div>
         <div class="col-10 PershkrimiV">
-            <h1 id="Personi"> Hi there I'm Albin</h1>
+            <h1 id="Personi"> Hi there I'm @Model.Name @Model.Surname</h1>
             <h1 id="PersonPershkrimi">
-                I'm a Programmer, hard working man and ready to learn new things!
+                @Model.Description
             </h1>
             <a id="ButtoniConnect" href="https://www.linkedin.com/in/albin-hetemi-b01988191/"> Get in touch </a>
         </div>
@@ -24,21 +25,34 @@
             <p>.........</p>
         </div>
         <h3 class="col-8 Paragrafi">
+
             Good research skills, ability to work under
-            pressure, ability to adapt to new environments and tasks, good problem solving skills. Skilled in C#, Java,
-            Html5, Css, Bootstrap, Asp .Net Core, Asp .Net Core Mvc, Asp .net Core Api, Microsoft Sql Server, JavaScript and ReactJs.
+            pressure, ability to adapt to new environments and tasks, good problem solving skills. Skilled in
+            @foreach (var item in Model.Skills)
+            {
+                <p> @item.Name, </p>
+            }
         </h3>
         <div id="Eksperiencat" class="col-12">
             <div class="PershkrimiV col-4">
                 <h1>Experiences</h1>
                 <p>.........</p>
             </div>
+
             <div class="col-8 Paragrafi">
-                <h2>Company - Besiana Sh.p.k</h2>
+                <h2>
+                    Company - @foreach (var @item in Model.Experiences)
+                    {
+                        @item.Instituion
+                        ;
+                    }
+                </h2>
                 <h3>
-                    Started working in Spare Parts Industry, where I have reponsibilities
-                    for selling and buying for missing products as well as new products which are sought
-                    by buyers.
+                    @foreach (var @item in Model.Experiences)
+                    {
+                        @item.Description
+                        ;
+                    }
                 </h3>
             </div>
         </div>
@@ -48,28 +62,95 @@
             <h1>Below you can find some of my Skills ilustrated!</h1>
         </div>
         <div class="Skills">
-            <h3 class="emratSkills"><a href="https://docs.microsoft.com/en-us/dotnet/csharp/">C#</a></h3>
+            <h3 class="emratSkills">
+                <a href="https://docs.microsoft.com/en-us/dotnet/csharp/">
+                    @foreach (var @item in Model.Languages)
+                    {
+                        if (@item.Name.Equals("C#"))
+                        {
+                            @item.Name
+                            ;
+                        }
+                    }
+                </a>
+            </h3>
             <img src="~/Images/C_Sharp.png" alt="C#" height="150" width="200">
         </div>
         <div class="Skills">
-            <h3 class="emratSkills"><a href="https://www.java.com/en/">Java</a></h3>
+            <h3 class="emratSkills">
+                <a href="https://www.java.com/en/">
+                    @foreach (var @item in Model.Languages)
+                    {
+                        if (@item.Name.Equals("Java"))
+                        {
+                            @item.Name
+                            ;
+                        }
+                    }
+                </a>
+            </h3>
             <img src="/Images/Java.png" alt="Java" height="150" width="200">
         </div>
         <div class="Skills">
-            <h3 class="emratSkills"> <a href="https://www.microsoft.com/en-us/sql-server/sql-server-downloads">Microsoft Sql Server</a></h3>
+            <h3 class="emratSkills">
+                <a href="https://www.microsoft.com/en-us/sql-server/sql-server-downloads">
+                    @foreach (var @item in Model.Languages)
+                    {
+                        if (@item.Name.Equals("Microsoft Sql Server"))
+                        {
+                            @item.Name
+                            ;
+                        }
+
+                    }
+                </a>
+            </h3>
             <img src="/Images//Sql_Server.jpg" alt="SqlServer" height="150" width="200">
         </div>
         <div class="Skills">
-            <h3 class="emratSkills"><a href="https://www.javascript.com/">JavaScript</a></h3>
+            <h3 class="emratSkills">
+                <a href="https://www.javascript.com/">
+                    @foreach (var @item in Model.Languages)
+                    {
+                        if (@item.Name.Equals("JavaScript"))
+                        {
+                            @item.Name
+                            ;
+                        }
+                    }
+                </a>
+            </h3>
             <img src="Images/JS.png" alt="JavaScript" height="150" width="200">
         </div>
         <div class="Skills">
-            <h3 class="emratSkills"> <a href="https://reactjs.org/"> React Js</a></h3>
+            <h3 class="emratSkills">
+                <a href="https://reactjs.org/">
+                    @foreach (var @item in Model.Languages)
+                    {
+                        if (@item.Name.Equals("ReactJS"))
+                        {
+                            @item.Name
+                            ;
+                        }
+                    }
+                </a>
+            </h3>
             <img src="~/Images//React.png"
                  alt="ReactJs" height="150" width="200">
         </div>
         <div class="Skills">
-            <h3 class="emratSkills"><a href="https://dotnet.microsoft.com/en-us/apps/aspnet">Asp .Net</a></h3>
+            <h3 class="emratSkills">
+                <a href="https://dotnet.microsoft.com/en-us/apps/aspnet">
+                    @foreach (var @item in Model.Skills)
+                    {
+                        if (@item.Name.Equals("Asp .Net"))
+                        {
+                            @item.Name
+                            ;
+                        }
+                    }
+                </a>
+            </h3>
             <img src="~/Images//aspnet.jpg" alt="AspNet"
                  height="150" width="200">
         </div>
@@ -80,14 +161,14 @@
             <h1>Some of my Projects</h1>
         </div>
         <div class="col-5 Containeri">
-            <h2> Web Api</h2>
+            <h2> <a href="https://github.com/AlbinHetemi/WebApi2">Web Api</a></h2>
             <p>
                 Api developed in Asp.Net Core with many features in many things!
             </p>
             <h4>C#, ASP.NET CORE</h4>
         </div>
         <div class="col-5 Containeri">
-            <h2> Acounting Application </h2>
+            <h2> <a href="https://github.com/AlbinHetemi/Accounting-Application">Acounting Application</a> </h2>
             <p>
                 Application for Spare Parts Stores to manage invoices, sales, employees, clients
                 and much more!
@@ -95,14 +176,14 @@
             <h4>C#, Windows Forms, Microsoft Sql Server</h4>
         </div>
         <div class="col-5 Containeri">
-            <h2> Tech Page </h2>
+            <h2> <a href="https://github.com/AlbinHetemi/Tech-Page">Tech Page</a> </h2>
             <p>
                 Web Page for Technology Companies to sale their products online.
             </p>
             <h4>Html, Css, JavaScript, JQuery</h4>
         </div>
         <div class="col-5 Containeri">
-            <h2> Taxi Company </h2>
+            <h2><a href="https://github.com/AlbinHetemi/Taxi-Company">Taxi Company</a>  </h2>
             <p>
                 Application for Taxi Companies to manage their workers and Cars.
             </p>

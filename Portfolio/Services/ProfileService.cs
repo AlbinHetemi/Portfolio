@@ -3,12 +3,18 @@ using Portfolio.Repositories;
 
 namespace Portfolio.Services
 {
-    public static class ProfileService : IProfile
+    public  class ProfileService : IProfile
     {
+        private readonly DbContext dbContext;
 
-        public static Profile getProfile()
+        public ProfileService(DbContext dbContext)
         {
-            return DbContext.Profile2();
+            this.dbContext = dbContext;
+        }
+
+        public Profile getProfile()
+        {
+            return dbContext.profile;
         }
     }
 }

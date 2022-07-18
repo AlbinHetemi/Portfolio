@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Portfolio.Models;
+using Portfolio.Repositories;
 using System.Diagnostics;
 
 namespace Portfolio.Controllers
@@ -7,15 +8,17 @@ namespace Portfolio.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly IProfile profile;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, IProfile profile)
         {
             _logger = logger;
+            this.profile = profile;
         }
 
         public IActionResult Index()
         {
-            return View();
+            return View(profile.getProfile());
         }
 
         public IActionResult Privacy()
