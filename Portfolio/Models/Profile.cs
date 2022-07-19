@@ -2,7 +2,7 @@
 {
     public class Profile 
     {
-        public Profile(int iD, string name, string surname, string description, List<Educations> educations, List<Experiences> experiences, List<Languages> languages, List<Skills> skills)
+        public Profile(int iD, string name, string surname, string description, List<Educations> educations, List<Experiences> experiences, List<Languages> languages, List<Skills> skills,List<Repositories> repositories)
         {
             ID = iD;
             Name = name;
@@ -12,6 +12,7 @@
             Experiences = experiences;
             Languages = languages;
             Skills = skills;
+            Repositories = repositories;
         }
 
         public int ID { get; set; }
@@ -26,6 +27,7 @@
         
         public List<Skills> Skills { get; set; }
 
+        public List<Repositories> Repositories { get; set; }
 
     }
 }

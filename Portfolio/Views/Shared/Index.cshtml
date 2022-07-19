@@ -161,31 +161,78 @@
             <h1>Some of my Projects</h1>
         </div>
         <div class="col-5 Containeri">
-            <h2> <a href="https://github.com/AlbinHetemi/WebApi2">Web Api</a></h2>
+            <h2> <a href="https://github.com/AlbinHetemi/WebApi2">@foreach(var item in Model.Repositories)
+                    {
+                        if (@item.Name.Equals("Web Api"))
+                        {
+                            @item.Name
+                        }
+                    }</a></h2>
             <p>
-                Api developed in Asp.Net Core with many features in many things!
+               @foreach(var item in Model.Repositories)
+                    {
+                        if (@item.Name.Equals("Web Api"))
+                        {
+                            @item.Description;
+                        }
+                    } 
             </p>
             <h4>C#, ASP.NET CORE</h4>
         </div>
         <div class="col-5 Containeri">
-            <h2> <a href="https://github.com/AlbinHetemi/Accounting-Application">Acounting Application</a> </h2>
+            <h2> <a href="https://github.com/AlbinHetemi/Accounting-Application"> @foreach(var item in Model.Repositories)
+                    {
+                        if (@item.Name.Equals("Acounting Application"))
+                        {
+                            @item.Name;
+                        }
+                    }</a> </h2>
             <p>
-                Application for Spare Parts Stores to manage invoices, sales, employees, clients
-                and much more!
+              @foreach(var item in Model.Repositories)
+                    {
+                        if (@item.Name.Equals("Acounting Application"))
+                        {
+                            @item.Description;
+                        }
+                    }
             </p>
             <h4>C#, Windows Forms, Microsoft Sql Server</h4>
         </div>
         <div class="col-5 Containeri">
-            <h2> <a href="https://github.com/AlbinHetemi/Tech-Page">Tech Page</a> </h2>
+            <h2> <a href="https://github.com/AlbinHetemi/Tech-Page">@foreach(var item in Model.Repositories)
+                    {
+                        if (@item.Name.Equals("Tech Page"))
+                        {
+                            @item.Name;
+                        }
+                    }</a> </h2>
             <p>
-                Web Page for Technology Companies to sale their products online.
+                @foreach(var item in Model.Repositories)
+                    {
+                        if (@item.Name.Equals("Tech Page"))
+                        {
+                            @item.Description;
+                        }
+                    }
             </p>
             <h4>Html, Css, JavaScript, JQuery</h4>
         </div>
         <div class="col-5 Containeri">
-            <h2><a href="https://github.com/AlbinHetemi/Taxi-Company">Taxi Company</a>  </h2>
+            <h2><a href="https://github.com/AlbinHetemi/Taxi-Company">@foreach(var item in Model.Repositories)
+                    {
+                        if (@item.Name.Equals("Taxi Company"))
+                        {
+                            @item.Name;
+                        }
+                    }</a>  </h2>
             <p>
-                Application for Taxi Companies to manage their workers and Cars.
+                @foreach(var item in Model.Repositories)
+                    {
+                        if (@item.Name.Equals("Taxi Company"))
+                        {
+                            @item.Description;
+                        }
+                    }
             </p>
             <h4>Java</h4>
 
